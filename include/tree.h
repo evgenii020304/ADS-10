@@ -15,7 +15,7 @@ class Tree {
   Node* root;
   std::vector<std::vector<char>> perm;
 
-  void createPerm(const std::vector<char> sequence) {
+  void createPerm(const std::vector<char>& sequence) {
     addElem(root, sequence);
     readTree(root, {});
   }

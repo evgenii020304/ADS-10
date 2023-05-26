@@ -20,14 +20,15 @@ class Tree {
   }
 
   void addElem(Node* rootptr, const std::vector<char>& sequence) {
-    if (rootptr==nullptr) {
+    if (rootptr == nullptr) {
       root = rootptr = new Node;
     }
     for (char sym : sequence) {
       Node* num = new Node(sym);
       rootptr->child.push_back(num);
       std::vector<char> updateSequence(sequence);
-      updateSequence.erase(std::find(updateSequence.begin(), updateSequence.end(), sym));
+      updateSequence.erase(std::find(updateSequence.begin(), 
+                                     updateSequence.end(), sym));
       addElem(num, updateSequence);
     }
   }
@@ -46,7 +47,7 @@ class Tree {
   explicit Tree(const std::vector<char>& init) : root(nullptr) {
     createPerm(init);
   }
-  
+
   std::vector<std::vector<char>> getPerm() const {
     return perm;
   }

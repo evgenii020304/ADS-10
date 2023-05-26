@@ -27,7 +27,7 @@ class Tree {
       Node* num = new Node(sym);
       rootptr->child.push_back(num);
       std::vector<char> updateSequence(sequence);
-      updateSequence.erase(std::find(updateSequence.begin(), 
+      updateSequence.erase(std::find(updateSequence.begin(), \
                                      updateSequence.end(), sym));
       addElem(num, updateSequence);
     }

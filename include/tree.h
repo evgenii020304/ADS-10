@@ -7,7 +7,7 @@
 struct Node {
   char sym;
   std::vector<Node*> child;
-  explicit Node(char sym = '*') : sym(sym) {}
+  explicit Node(char sym = '\0') : sym(sym) {}
 };
 
 class Tree {
@@ -35,7 +35,7 @@ class Tree {
   }
 
   void readTree(Node* rootptr, std::vector<char> sequence) {
-    if (rootptr == nullptr && rootptr->sym != '\0')
+    if (rootptr != nullptr && rootptr->sym != '\0')
       sequence.push_back(rootptr->sym);
     if (rootptr->child.empty())
       perm.push_back(sequence);
